@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio StevenMix</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, 'Segoe UI', Arial, Helvetica, sans-serif;
+      background: linear-gradient(0deg,#ffffff, #ececec);
+      color: #0c0c0c;
+      line-height: 1.5;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    /* Header */
+    header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    h1 {
+      font-size: 2rem;
+      background: linear-gradient(90deg, #0a0a0a, #020202);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    /* Navegación */
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 1.8rem;
+      margin: 1rem 0;
+    }
+
+    nav a {
+      color: #000000;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: #5a5a5a;
+    }
+
+    /* Secciones */
+    section {
+      background: rgba(60, 60, 63, 0.253);
+      backdrop-filter: blur(4px);
+      
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 0 25px rgba(10, 10, 10, 0.151)
+    }
+
+    h2 {
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      border-left: 4px solid #ffffff;
+      padding-left: 0.8rem;
+    }
+
+    /* Info */
+    .info-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    .info-content img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #ffffff;
+      box-shadow: 0 0 25px rgba(10, 10, 10, 0.397);
+    }
+
+    .bio {
+      flex: 1;
+    }
+
+    .tag {
+      color: #141414;
+      font-weight: bold;
+    }
+
+    /* Redes sociales */
+    .social-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin: 1rem 0 0.5rem;
+    }
+
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: radial-gradient(rgba(27, 27, 27, 0.596) rgba(rgb(48, 48, 48))) ;
+      padding: 0.4rem 1rem;
+      border-radius: 40px;
+      text-decoration: none;
+      color: #313131;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: 0.2s;
+      border: 1px solid rgba(0, 0, 0, 0.3);
+    }
+
+    .social-link:hover {
+      background: #f8f8f8;
+      color: #0a0c15;
+      transform: scale(1.02);
+    }
+
+    /* Audio */
+    .track {
+      background: #929292;
+      padding: 0.8rem;
+      margin-bottom: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    audio {
+      max-width: 260px;
+      width: 100%;
+      height: 38px;
+    }
+
+    /* Video grid */
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.2rem;
+    }
+
+    .video-card {
+      background: #00000030;
+      border-radius: 1rem;
+      overflow: hidden;
+    }
+
+    video {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      display: block;
+    }
+
+    .video-card p {
+      padding: 0.5rem 0.8rem 0.8rem;
+      font-size: 0.9rem;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.75rem;
+      opacity: 0.6;
+      margin-top: 2rem;
+    }
+
+    button {
+      background: #6e6965;
+      border: none;
+      padding: 0.4rem 1rem;
+      border-radius: 2rem;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 0.5rem;
+    }
+
+    @media (max-width: 600px) {
+      .track {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      audio {
+        max-width: 100%;
+      }
+      .social-links {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <img src="https://yt3.googleusercontent.com/ytc/AIdro_lxlq8GvpVpug5ijxqkwW1kdW5U0uiBdJWjc5uHFsI6-DM=s160-c-k-c0x00ffffff-no-rj" alt="Artista">
+    <h1>StevenMix</h1>
+    <p>Compositor, Arreglista & Remixer.</p>
+    <nav>
+      <a href="#info">Info</a>
+      <a href="#audio">Audio</a>
+      <a href="#video">Video</a>
+      <a href="#Commissions Info">Comisiones</a>
+      <a href="#" id="contactBtn">Contacto</a>
+    </nav>
+  </header>
+
+  <!-- Información + Redes Sociales -->
+  <section id="info">
+    <h2>✨ Sobre mí</h2>
+    <div class="info-content">
+      <img src="Multimedia\Pictures\Profile.jpg" alt="Artista">
+      <div class="bio">
+        <p><span class="tag">🎤 Compositor, Arreglista, Remixer, Productor Musical.</span></p>
+        <p>Un músico apasionado en la composición y reimaginación de música, con experiencia en diferentes área tales como: Producción Musical,
+            orquestación, arreglos, producción de pistas, bandas sonoras, diseño de sonido, mezcla y masterización.
+        </p>
+        
+        <!-- ENLACES A REDES SOCIALES -->
+        <div class="social-links">
+          <a href="https://www.instagram.com/steven.mix12/" class="social-link" target="_blank">📷 Instagram</a>
+          <a href="https://open.spotify.com/artist/7ENJfXoelqmSQeNq8RqNbN?si=QTOXtVITSUuzH5xUBT-Odg" class="social-link" target="_blank">🎵 Spotify</a>
+          <a href="https://www.youtube.com/@StevenMix" class="social-link" target="_blank">📺 YouTube</a>
+          <a href="https://www.tiktok.com/@steven.mix12?is_from_webapp=1&sender_device=pc" class="social-link" target="_blank">🎶 TikTok</a>
+          <a href="https://x.com/CampeonStevnMix" class="social-link" target="_blank">🐦 X (Twitter)</a>
+        </div>
+        
+        <button id="bioContact">📩 Contacto directo</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reproductor de audio -->
+  <section id="audio">
+    <h2>🎧 Escucha </h2>
+    <div class="track">
+      <span> <strong>Adventure</strong></span>
+      <audio controls>
+        <source src="Multimedia\Audio\Adventure.flac" type="audio/flac">
+      </audio>
+    </div>
+    <div class="track">
+      <span> <strong>Twitch Cup 2023 Final Boss</strong></span>
+      <audio controls>
+        <source src="Multimedia\Audio\Battle Boss Delta.flac" type="audio/flac">
+      </audio>
+    </div>
+
+    <div class="track">
+      <span> <strong>Chill Music</strong></span>
+      <audio controls>
+        <source src="Multimedia\Audio\Portfolio Chill.flac" type="audio/flac">
+      </audio>
+    </div>
+
+    <div class="track">
+      <span> <strong>A Sunny Day</strong></span>
+      <audio controls>
+        <source src="Multimedia\Audio\VGM C1 - A Sunny Day.flac" type="audio/flac">
+      </audio>
+    </div>
+
+    <div class="track">
+      <span> <strong>Big Encounter</strong></span>
+      <audio controls>
+        <source src="Multimedia\Audio\Encounter Trainers.wav" type="audio/wav">
+      </audio>
+    </div>
+
+    <div class="track">
+      <span> <strong>Opening Cinematic</strong></span>
+      <audio controls>
+        <source src="Multimedia\Audio\Errinsleet - Opening Cinematic.flac" type="audio/flac">
+      </audio>
+    </div>
+
+    <div class="track">
+      <span> <strong>Ad Music 1</strong></span>
+      <audio controls>
+        <source src="Multimedia\Audio\Musica Tarta Chocolate.wav" type="audio/flac">
+      </audio>
+    </div>
+
+    <div class="track">
+      <span> <strong>Ad Music 2</strong></span>
+      <audio controls>
+        <source src="Multimedia\Audio\Musica Tarta Zanahoria.wav" type="audio/wav">
+      </audio>
+    </div>
+
+    <div class="track">
+      <span> <strong>Battle 1</strong></span>
+      <audio controls>
+        <source src="Multimedia\Audio\xora battle theme final master.flac" type="audio/flac">
+      </audio>
+    </div>
+
+    <div class="track">
+      <span> <strong>Threat</strong></span>
+      <audio controls>
+        <source src="Multimedia\Audio\Eliphus - Threat.flac" type="audio/flac">
+      </audio>
+    </div>
+
+    <div class="track">
+      <span> <strong>Legendary Trio Threat</strong></span>
+      <audio controls>
+        <source src="Multimedia\Audio\kaihatsu track maximus.mp3" type="audio/mp3">
+      </audio>
+    </div>
+
+    <div class="track">
+      <span> <strong>Aqua</strong></span>
+      <audio controls>
+        <source src="Multimedia\Audio\Portfolio Aqua.flac" type="audio/flac">
+      </audio>
+    </div>
+
+    <div class="track">
+      <span> <strong>Upright Brass</strong></span>
+      <audio controls>
+        <source src="Multimedia\Audio\Portfolio Upright Brass.flac" type="audio/flac">
+      </audio>
+    </div>
+
+    <div class="track">
+      <span> <strong>Island</strong></span>
+      <audio controls>
+        <source src="Multimedia\Audio\island music.mp3" type="audio/flac">
+      </audio>
+    </div>
+
+    <div class="track">
+      <span> <strong>Bossa Mart</strong></span>
+      <audio controls>
+        <source src="Multimedia\Audio\Comision Nebula (mart) bvv.mp3" type="audio/mp3">
+      </audio>
+    </div>
+
+    <div class="track">
+      <span> <strong>In Defense</strong></span>
+      <audio controls>
+        <source src="Multimedia\Audio\VGM C4 - Trailer.flac" type="audio/flac">
+      </audio>
+    </div>
+
+    <div class="track">
+      <span> <strong>Tamer Battle</strong></span>
+      <audio controls>
+        <source src="Multimedia\Audio\Trainer Battle.flac" type="audio/flac">
+      </audio>
+    </div>
+
+    <div class="track">
+      <span> <strong>Jeopardy</strong></span>
+      <audio controls>
+        <source src="Multimedia\Audio\Eliphus - Boss Phase 2 Extended Version.flac" type="audio/flac">
+      </audio>
+    </div>
+  </section>
+
+  <!-- Trabajos Previos -->
+  <section id="video">
+    <h2>📹 Previous Works</h2>
+    <div class="video-grid">
+           <iframe width="305" height="171" src="https://www.youtube.com/embed/m0RFHkc8npc" title="死神 - Mori Calliope (Cover) original by 米津玄師" 
+           frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      
+     <div class="video-grid"> 
+          <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/album/4Jh4NQl29lCc1LR4bp602B?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+       </div>
+     <div class="video-grid">
+          <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/album/3qPCpk1YLH9p7RZ7tXxANS?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+    </div>
+  </section>
+
+  <!-- Reproductor de videos -->
+<section id="Commissions Info">
+  <h1 style="text-align: center;">Comisiones y Pedidos</h1>
+  <br>
+  <p>Para comisiones, pedidos y cotizaciones te puedes contactar conmigo directamente mediante correo electrónico o por mensaje directo, ya sea en "X" (Twitter) o Instagram. (Links en la sección de Redes Sociales)
+</p>
+<br>
+<h3 style="text-align: center;">Condiciones y Políticas</h3>
+<br>
+   <p>- Los pagos se realizan mediante Paypal.</p>
+   <br>
+   <p>- Se realiza primeramente una cotizacíon del proyecto el cual toma en base la duración requerida, complejidad y tiempo requerido; el pago se realiza en dos partes, la cual un 50% se realiza al principio y un 50% al final.</p>
+   <br>
+   <p>- Primeramente se entrega un sketch de las ideas generales del proyecto, una vez este aprobado por el cliente se procede a el arreglo del mismo, punto en el cual no estaria permitida alguna otra revisión. En caso de requerir alguna revisión pasado este punto, se cobrara un extra dependiendo de la situación.</p>
+   <br>
+  <h4 style="text-align: center;">Políticas de uso</h4>
+  <p>En caso de arreglo, remixes u otro audio que este previamente publicado en mis canales principales (que no pertenezca a algun otro proyecto independiente), puede ser usado para cualquier proyecto con la condición de acreditarme apropiadamente.</p>
+  <br>
+  <p>Para los pedidos, los clientes tienen la libertad de usar el audio para cualquier proyecto, con excepción de venderlo bajo otro nombre o redistribución.</p>
+
+
+</section>
+  <footer>
+    <p>© 2025 StevenMix · stevenmix2512@gmail.com</p>
+    </footer>
+</div>
+
+<script>
+  function mostrarContacto() {
+    alert("📧 Email: stevenmix2512@gmail.com\n");
+  }
+
+  const btnContact = document.getElementById('contactBtn');
+  const bioContact = document.getElementById('bioContact');
+  if(btnContact) btnContact.addEventListener('click', (e) => { e.preventDefault(); mostrarContacto(); });
+  if(bioContact) bioContact.addEventListener('click', mostrarContacto);
+</script>
+</body>
+</html>
