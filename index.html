@@ -219,11 +219,12 @@
       <a href="#" id="contactBtn">Contacto</a>
     </nav>
     
-    <!-- Selector personalizado -->
-<div style="display: flex; justify-content: center; margin: 1rem 0;">
-  <select id="languageSelect" style="background: #6e6965; color: white; border: none; padding: 0.5rem 1.5rem; border-radius: 2rem; font-weight: bold; cursor: pointer; font-size: 0.9rem; outline: none;">
+    <!-- Selector de idioma -->
+<div style="text-align: center; margin: 1rem 0;">
+  <select id="idioma" style="background: #6e6965; color: white; border: none; padding: 0.5rem 1.5rem; border-radius: 2rem; font-weight: bold; cursor: pointer;">
     <option value="es">🇪🇸 Español</option>
     <option value="en" selected>🇺🇸 English</option>
+    <option value="ja">🇯🇵 日本語</option>
     <option value="fr">🇫🇷 Français</option>
     <option value="de">🇩🇪 Deutsch</option>
     <option value="pt">🇵🇹 Português</option>
@@ -233,75 +234,38 @@
 
 <div id="google_translate_element" style="display: none;"></div>
 
-<script type="text/javascript">
+<script>
   function googleTranslateElementInit() {
     new google.translate.TranslateElement({
       pageLanguage: 'es',
-      includedLanguages: 'en,fr,de,it,pt',
-      autoDisplay: false
+      includedLanguages: 'en,ja,fr,de,pt,it'
     }, 'google_translate_element');
   }
-  
-  // Esperar a que cargue y aplicar inglés automáticamente
-  setTimeout(function() {
-    var select = document.querySelector('.goog-te-combo');
-    if (select) {
-      // Forzar traducción a inglés al cargar la página
-      select.value = 'en';
-      select.dispatchEvent(new Event('change'));
+
+  setTimeout(() => {
+    const combo = document.querySelector('.goog-te-combo');
+    if (combo) {
+      combo.value = 'en';
+      combo.dispatchEvent(new Event('change'));
       
-      // Ocultar notificaciones
-      setTimeout(function() {
-        var notices = document.querySelectorAll('.goog-te-notice, .goog-te-balloon-frame');
-        notices.forEach(function(notice) {
-          if(notice && notice.remove) notice.remove();
-        });
-      }, 100);
-      
-      // Evento para cuando el usuario cambie manualmente
-      document.getElementById('languageSelect').addEventListener('change', function() {
-        var lang = this.value;
-        if (lang === 'es') {
-          window.location.reload();
-        } else if (lang) {
-          select.value = lang;
-          select.dispatchEvent(new Event('change'));
-          setTimeout(function() {
-            var notices = document.querySelectorAll('.goog-te-notice, .goog-te-balloon-frame');
-            notices.forEach(function(notice) {
-              if(notice && notice.remove) notice.remove();
-            });
-          }, 100);
+      document.getElementById('idioma').onchange = () => {
+        const lang = document.getElementById('idioma').value;
+        if (lang === 'es') location.reload();
+        else if (combo) {
+          combo.value = lang;
+          combo.dispatchEvent(new Event('change'));
         }
-      });
+      };
     }
-  }, 1500); // Aumentado a 1.5 segundos para asegurar carga
+  }, 1000);
 </script>
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 <style>
-  /* Eliminar TODO rastro visual de Google Translate */
-  .goog-te-banner-frame,
-  .goog-te-balloon-frame,
-  .goog-te-notice,
-  .goog-te-notice-frame,
-  iframe:not([src^="https://www.youtube.com"]),
-  .skiptranslate,
-  .goog-te-gadget,
-  .goog-te-menu-frame {
+  .goog-te-banner-frame, .goog-te-balloon-frame, .goog-te-notice, .skiptranslate, .goog-te-gadget {
     display: none !important;
-    visibility: hidden !important;
-    height: 0 !important;
-    width: 0 !important;
-    opacity: 0 !important;
-    pointer-events: none !important;
   }
-  
-  body {
-    top: 0px !important;
-    position: relative !important;
-    margin-top: 0 !important;
-  }
+  body { top: 0 !important; }
 </style>
 
   </header>
