@@ -235,6 +235,10 @@
 <div id="google_translate_element" style="display: none;"></div>
 
 <script>
+  // Eliminar cookie de Google Translate para forzar idioma original
+  document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+  document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; domain=" + window.location.hostname + "; path=/;";
+  
   function googleTranslateElementInit() {
     new google.translate.TranslateElement({
       pageLanguage: 'es',
@@ -245,11 +249,15 @@
   setTimeout(() => {
     const combo = document.querySelector('.goog-te-combo');
     if (combo) {
+      // Forzar que el selector muestre español
+      combo.value = 'es';
+      
       document.getElementById('idioma').onchange = () => {
         const lang = document.getElementById('idioma').value;
         
         if (lang === 'es') {
-          // Recargar la página para volver al español original (sin traducir)
+          // Recargar y eliminar cookie para asegurar español original
+          document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
           window.location.reload();
         } else if (combo) {
           combo.value = lang;
