@@ -218,6 +218,57 @@
       <a href="#Commissions Info">Comisiones</a>
       <a href="#" id="contactBtn">Contacto</a>
     </nav>
+    
+    <!-- Selector personalizado que controla a Google Translate -->
+<div style="display: flex; justify-content: center; margin: 1rem 0;">
+  <select id="languageSelect" style="background: #6e6965; color: white; border: none; padding: 0.5rem 1.5rem; border-radius: 2rem; font-weight: bold; cursor: pointer; font-size: 0.9rem; outline: none;">
+    <option value="">🌐 Traducir página</option>
+    <option value="es">🇪🇸 Español</option>
+    <option value="en">🇺🇸 English</option>
+    <option value="fr">🇫🇷 Français</option>
+    <option value="de">🇩🇪 Deutsch</option>
+    <option value="pt">🇵🇹 Português</option>
+    <option value="it">🇮🇹 Italiano</option>
+    <option value="ja">🇯🇵 日本語</option>
+    <option value="ko">🇰🇷 한국어</option>
+    <option value="zh-CN">🇨🇳 中文</option>
+  </select>
+</div>
+
+<div id="google_translate_element" style="display: none;"></div>
+
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'es',
+      includedLanguages: 'en,fr,de,it,pt,ja,ko,zh-CN'
+    }, 'google_translate_element');
+  }
+  
+  // Esperar a que cargue y conectar nuestro selector
+  setTimeout(function() {
+    var select = document.querySelector('.goog-te-combo');
+    if (select) {
+      document.getElementById('languageSelect').addEventListener('change', function() {
+        var lang = this.value;
+        if (lang === 'es') {
+          window.location.reload();
+        } else if (lang) {
+          select.value = lang;
+          select.dispatchEvent(new Event('change'));
+        }
+      });
+    }
+  }, 1000);
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<style>
+  .goog-te-banner-frame { display: none !important; }
+  body { top: 0px !important; position: relative !important; }
+  .goog-te-gadget { display: none; }
+</style>
+
   </header>
 
   <!-- Información + Redes Sociales -->
@@ -412,6 +463,7 @@
 
 
 </section>
+
   <footer>
     <p>© 2025 StevenMix · stevenmix2512@gmail.com</p>
     </footer>
