@@ -256,7 +256,11 @@
       
       document.getElementById('idioma').onchange = () => {
         const lang = document.getElementById('idioma').value;
-        if (combo) {
+        
+        if (lang === 'es') {
+          // Recargar la página para volver al español original (sin traducir)
+          window.location.reload();
+        } else if (combo) {
           combo.value = lang;
           combo.dispatchEvent(new Event('change'));
         }
