@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+  <link rel="icon" type="image/png" href="Assets\Favicons\favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="Assets\Favicons\favicon.svg" />
+  <link rel="shortcut icon" href="Assets\Favicons\favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="Assets\Favicons\apple-touch-icon.png" />
+  <link rel="manifest" href="Assets\Favicons\site.webmanifest" />
+
+
+  <title>StevenMix Equipamiento</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, 'Segoe UI', Arial, Helvetica, sans-serif;
+      background: linear-gradient(0deg,#ffffff, #ececec);
+      color: #0c0c0c;
+      line-height: 1.5;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    /* Header */
+    header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    h1 {
+      font-size: 2rem;
+      background: linear-gradient(90deg, #0a0a0a, #020202);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    /* Navegación */
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 1.8rem;
+      margin: 1rem 0;
+    }
+
+    nav a {
+      color: #000000;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: #5a5a5a;
+    }
+
+    /* Secciones */
+    section {
+      background: rgba(60, 60, 63, 0.253);
+      backdrop-filter: blur(4px);
+      
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 0 25px rgba(10, 10, 10, 0.151)
+    }
+
+    h2 {
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      border-left: 4px solid #ffffff;
+      padding-left: 0.8rem;
+    }
+
+    /* Info */
+    .info-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    .info-content img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #ffffff;
+      box-shadow: 0 0 25px rgba(10, 10, 10, 0.397);
+    }
+
+    .bio {
+      flex: 1;
+    }
+
+    .tag {
+      color: #141414;
+      font-weight: bold;
+    }
+
+    /* Redes sociales */
+    .social-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin: 1rem 0 0.5rem;
+    }
+
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: radial-gradient(rgba(27, 27, 27, 0.596) rgba(rgb(48, 48, 48))) ;
+      padding: 0.4rem 1rem;
+      border-radius: 40px;
+      text-decoration: none;
+      color: #313131;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: 0.2s;
+      border: 1px solid rgba(0, 0, 0, 0.3);
+    }
+
+    .social-link:hover {
+      background: #f8f8f8;
+      color: #0a0c15;
+      transform: scale(1.02);
+    }
+
+    /* Audio */
+    .track {
+      background: #929292;
+      padding: 0.8rem;
+      margin-bottom: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    audio {
+      max-width: 260px;
+      width: 100%;
+      height: 38px;
+    }
+
+    /* Video grid */
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.2rem;
+    }
+
+    .video-card {
+      background: #00000030;
+      border-radius: 1rem;
+      overflow: hidden;
+    }
+
+    video {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      display: block;
+    }
+
+    .video-card p {
+      padding: 0.5rem 0.8rem 0.8rem;
+      font-size: 0.9rem;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.75rem;
+      opacity: 0.6;
+      margin-top: 2rem;
+    }
+
+    button {
+      background: #6e6965;
+      border: none;
+      padding: 0.4rem 1rem;
+      border-radius: 2rem;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 0.5rem;
+    }
+
+    @media (max-width: 600px) {
+      .track {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      audio {
+        max-width: 100%;
+      }
+      .social-links {
+        justify-content: center;
+      }
+      nav {
+         gap: 0.9rem; 
+        }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <a href="index.html">
+    <img src="https://yt3.googleusercontent.com/ytc/AIdro_lxlq8GvpVpug5ijxqkwW1kdW5U0uiBdJWjc5uHFsI6-DM=s160-c-k-c0x00ffffff-no-rj" alt="Artista">
+    </a>
+    <h1>StevenMix</h1>
+    <p>Compositor, Arreglista & Remixer.</p>
+
+        <!-- Selector de idioma -->
+<div style="text-align: center; margin: 1rem 0;">
+  <select id="idioma" style="background: #6e6965; color: white; border: none; padding: 0.5rem 1.5rem; border-radius: 2rem; font-weight: bold; cursor: pointer;">
+    <option value="es" selected>🇪🇸 Español</option>
+    <option value="en">🇺🇸 English</option>
+    <option value="ja">🇯🇵 日本語</option>
+    <option value="fr">🇫🇷 Français</option>
+    <option value="de">🇩🇪 Deutsch</option>
+    <option value="pt">🇵🇹 Português</option>
+    <option value="it">🇮🇹 Italiano</option>
+  </select>
+</div>
+
+<div id="google_translate_element" style="display: none;"></div>
+
+<script>
+  // Eliminar cookie de Google Translate para forzar idioma original
+  document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+  document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; domain=" + window.location.hostname + "; path=/;";
+  
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'es',
+      includedLanguages: 'en,ja,fr,de,pt,it'
+    }, 'google_translate_element');
+  }
+
+  setTimeout(() => {
+    const combo = document.querySelector('.goog-te-combo');
+    if (combo) {
+      // Forzar que el selector muestre español
+      combo.value = 'es';
+      
+      document.getElementById('idioma').onchange = () => {
+        const lang = document.getElementById('idioma').value;
+        
+        if (lang === 'es') {
+          // Recargar y eliminar cookie para asegurar español original
+          document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+          window.location.reload();
+        } else if (combo) {
+          combo.value = lang;
+          combo.dispatchEvent(new Event('change'));
+        }
+      };
+    }
+  }, 1000);
+</script>
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<style>
+  .goog-te-banner-frame, .goog-te-balloon-frame, .goog-te-notice, .skiptranslate, .goog-te-gadget {
+    display: none !important;
+  }
+  body { top: 0 !important; }
+</style>
+
+
+    <nav>
+      <a href="#info">Info</a>
+      <a href="#audio">Audio</a>
+      <a href="#video">Video</a>
+      <a href="#Commissions Info">Comisiones</a>
+      <a href="#" id="contactBtn">Contacto</a>
+    </nav>
+    
+     <nav>
+      <a href="index.html">Volver</a>
+    </nav>
+  </header>
+
+  <!-- informacion -->
+  <section id="info">
+
+
+  <footer>
+    <p>© 2025 StevenMix · stevenmix2512@gmail.com</p>
+    </footer>
+</div>
+
+<script>
+  function mostrarContacto() {
+    alert("📧 Email: stevenmix2512@gmail.com\n");
+  }
+
+  const btnContact = document.getElementById('contactBtn');
+  const bioContact = document.getElementById('bioContact');
+  if(btnContact) btnContact.addEventListener('click', (e) => { e.preventDefault(); mostrarContacto(); });
+  if(bioContact) bioContact.addEventListener('click', mostrarContacto);
+</script>
+</body>
+</html>
